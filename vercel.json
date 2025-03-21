@@ -1,5 +1,6 @@
+// filepath: c:\Users\Филип Кузманоски\Desktop\Doctor-Booking-Appointment-\vercel.json
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
