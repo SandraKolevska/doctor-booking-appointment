@@ -2,13 +2,13 @@
 
 ## This project focuses on providing an easy-to-use web application for booking doctor appointments, allowing patients to schedule visits, view available slots, and manage their appointments efficiently.
 
-Features: <br>
+Features: <br> <br> 
 Doctor Selection: Choose from a list of available doctors and specialties. <br>
 Appointment Scheduling: Easily book appointments with available time slots. <br>
 Patient Dashboard: View and manage your upcoming and past appointments. <br>
 Responsive Design: Works seamlessly across mobile, tablet, and desktop devices. <br> <br>
 
-Technologies:
+Technologies: <br>
 React for the frontend <br>
 Tailwind CSS for styling <br>
 Axios for handling API requests <br> <br>
