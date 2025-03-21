@@ -19,7 +19,7 @@ const Contact = () => {
             <p className='font-semibold text-lg text-gray-600'>OUR OFFICE</p>
             <p className='text-gray-500'>Bulevar Partizanski Odredi 165 <br/> Skopje , Macedonia</p>
             <p  className='text-gray-500'>Tel: +(389) 72-223-350 <br/> Email: filipkuzmanoski386@gmail.com</p>
-            <p className='font-semibold text-lg text-gray-600'>Careers at PRESCRIPTO</p>
+            <p className='font-semibold text-lg text-gray-600'>Careers at XMEDIKA</p>
             <p className='text-gray-500'>Learn more about our teams and job openings</p>
             <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-300'>Explore Jobs</button>
           </div>
