@@ -1,7 +1,19 @@
-Doctor Booking Appointment (Personal Project)
+# Doctor Appointment Booking Page
 
-Created a Doctor Appointment Booking Page (Front-end only) using React.
-Im developng small-scale applications to practice and improve object-oriented
-programming and data structure implementation.
+## This project focuses on providing an easy-to-use web application for booking doctor appointments, allowing patients to schedule visits, view available slots, and manage their appointments efficiently.
 
-I'm still working on this project :D
+Features:
+Doctor Selection: Choose from a list of available doctors and specialties.
+Appointment Scheduling: Easily book appointments with available time slots.
+Patient Dashboard: View and manage your upcoming and past appointments.
+Responsive Design: Works seamlessly across mobile, tablet, and desktop devices.
+Technologies:
+React for the frontend
+Tailwind CSS for styling
+Axios for handling API requests
+Goals:
+To provide an efficient and user-friendly system for managing doctor appointments, enhancing the patient experience and reducing administrative workloads.
+
+Deployment:
+This page is currently being worked on and will be deployed shortly. Stay tuned for updates and further enhancements!
+
