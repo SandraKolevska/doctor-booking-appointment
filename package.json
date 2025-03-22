@@ -4,8 +4,8 @@
   "description": "Features: <br> <br> \r Doctor Selection: Choose from a list of available doctors and specialties. <br>\r Appointment Scheduling: Easily book appointments with available time slots. <br>\r Patient Dashboard: View and manage your upcoming and past appointments. <br>\r Responsive Design: Works seamlessly across mobile, tablet, and desktop devices. <br> <br>",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev",
-    "build": "npm run build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "repository": {
