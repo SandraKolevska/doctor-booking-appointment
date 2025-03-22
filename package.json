@@ -4,7 +4,9 @@
   "description": "Features: <br> <br> \r Doctor Selection: Choose from a list of available doctors and specialties. <br>\r Appointment Scheduling: Easily book appointments with available time slots. <br>\r Patient Dashboard: View and manage your upcoming and past appointments. <br>\r Responsive Design: Works seamlessly across mobile, tablet, and desktop devices. <br> <br>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,30 @@
   "bugs": {
     "url": "https://github.com/Filip1010/Doctor-Booking-Appointment-/issues"
   },
-  "homepage": "https://github.com/Filip1010/Doctor-Booking-Appointment-#readme"
+  "homepage": "https://github.com/Filip1010/Doctor-Booking-Appointment-#readme",
+  "dependencies": {
+    "@testing-library/react": "^16.2.0",
+    "axios": "^1.7.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "react-toastify": "^10.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "jsdom": "^26.0.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12",
+    "vite": "^5.4.14",
+    "vitest": "^3.0.9"
+  }
 }

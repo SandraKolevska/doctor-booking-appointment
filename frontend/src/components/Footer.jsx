@@ -4,12 +4,12 @@ import { assets } from '../assets/assets'
 const Footer = () => {
 return (
     <div className='md:mx-10'>
-            <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
+            <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm pb-0 md:pb-10'>
                     
                     {/*-----------LeftSection--------------*/}
                     <div>
-                            <img className='mb-2 w-40 p-25' src={assets.FilipLogo} alt="" />
-                            <p className='w-full md:w-2/3 text-gray-600 leading-5 mt-2'><strong>Crafted with precision for healthcare heroes. Bridging the gap between doctors and patients, ensuring smooth and efficient appointment scheduling for a healthier tomorrow.</strong></p>
+                            <img className='mb-2 w-25 p-0' src={assets.FilipLogo} alt="" />
+                            <p className='w-full md:w-2/3 text-gray-600 leading-5 mt-2 pb-10'></p>
                     </div>
 
                     {/*-----------CenterSection--------------*/}

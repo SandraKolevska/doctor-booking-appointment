@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
+import NotFound from './pages/NotFound' // Ensure this import is correct
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/my-profile' element={<MyProfile />} />
         <Route path='/my-appointments' element={<MyAppointmets />} />
         <Route path='/appointments/:docId' element={<Appointment />} />
+        <Route path='*' element={<NotFound />} /> {/* Fallback route */}
       </Routes>
       <Footer />
     </div>
