@@ -1,4 +1,3 @@
-// filepath: c:\Users\Филип Кузманоски\Desktop\Doctor-Booking-Appointment-\frontend\src\App.jsx
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
@@ -11,7 +10,7 @@ import Login from './pages/Login'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
-import NotFound from './pages/NotFound' // Ensure this import is correct
+import NotFound from './pages/NotFound' 
 
 const App = () => {
   return (
