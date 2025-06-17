@@ -1,98 +1,90 @@
-# Doctor Booking Appointment – MERN Full Stack Project
+# Doctor Appointment Booking App
 
-Оваа апликација претставува динамичка веб-апликација развиена со **MERN стек** (MongoDB, Express.js, React, Node.js). Целта на апликацијата е да овозможи систем за закажување термини со доктори, со пристап и од серверска и клиентска страна. Проектот е изработен како дел од предметот **Веб програмирање 2024**.
+This is a dynamic web application built using the **MERN** stack (MongoDB, Express.js, React, Node.js).  
+The app enables users to search for doctors by specialty, view doctor profiles, and book medical appointments online.
 
-## 📦 Структура на проектот
+---
 
-Doctor-Booking-Appointment-/  
-├── backend/             → Express.js + MongoDB backend  
-│   ├── models/          → Mongoose модели (Doctor.js, ...)  
-│   ├── routes/          → Рути за API  
-│   ├── .env             → Конфигурација за околина  
-│   ├── server.js        → Главна серверска датотека  
-├── frontend/            → React frontend (SPA)  
-│   ├── src/  
-│   │   ├── components/  → Компоненти (Doctors, Login, Home, ...)  
-│   │   ├── context/     → AppContext  
-│   │   ├── App.jsx      → Главна компонента  
-│   │   ├── main.jsx     → Влезна точка за React  
-│   └── ...  
-├── README.md            → Овој документ  
-├── package.json         → Основна конфигурација
+## 📌 Features
 
-## ⚙️ Користени технологии
+- Browse doctors by medical specialty  
+- View detailed doctor profiles (photo, bio, experience, fees, location)  
+- Book appointments with available doctors  
+- Contact form for general inquiries  
+- Responsive design for mobile and desktop  
+- Admin-ready backend structure  
+- RESTful API with MongoDB integration  
 
-**Backend:**  
+---
+
+## ⚙️ Technologies Used
+
+### 🔷 Frontend
+- React + Vite  
+- Tailwind CSS  
+- React Router DOM  
+- Context API  
+
+### 🔶 Backend
 - Node.js  
 - Express.js  
-- MongoDB (локално + Atlas)  
+- MongoDB (Local)  
 - Mongoose  
-- dotenv  
+- Dotenv  
 
-**Frontend:**  
-- React  
-- React Router DOM  
-- TailwindCSS  
-- Vite  
-- Context API  
-- Vitest (за тестирање)
+---
 
-## 🚀 Функционалности
+## 🗂️ Project Structure
 
-- Прикажување листа на доктори  
-- Закажување термини  
-- Пријавување на корисник  
-- Мој профил и моите закажани термини  
-- Преглед на детали за доктор  
-- 404 Not Found страница  
-- Поврзаност преку REST API  
-- Docker-поддршка (планирано)
+```
+Doctor-Booking-Appointment/
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   ├── server.js
+│   └── .env
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── assets/
+│   │   └── App.jsx
+│   └── vite.config.js
+│
+└── README.md
+```
 
-## 🧪 Тестирање
+---
 
-Frontend компонентите се тестирани со:  
-- vitest  
-- @testing-library/react  
+## 🚀 How to Run the Project
 
-Пример тест се наоѓа во `App.test.jsx`.
+### 1. Clone the repository
 
-## 🛠️ Како да се стартува проектот
+```bash
+git clone https://github.com/SandraKolevska/doctor-booking-app.git
+cd doctor-booking-app
+```
 
-**Backend:**
+### 2. Run Backend
 
-1. Отвори терминал и позиционирај се во папката `backend`  
-2. Инсталирај ги зависностите:  
-   `npm install`  
-3. Стартувај го серверот:  
-   `npm start`  
+```bash
+cd backend
+npm install
+npm run dev
+```
 
-Очекуван излез:  
-Server running on port 5000  
-Connected to MongoDB
+Make sure **MongoDB is running locally** on your machine (default port: `27017`).
 
-**Frontend:**
+### 3. Run Frontend
 
-1. Отвори нов терминал и позиционирај се во папката `frontend`  
-2. Инсталирај ги зависностите:  
-   `npm install`  
-3. Стартувај го клиентот:  
-   `npm run dev`  
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-Апликацијата ќе се отвори на `http://localhost:5173`
-
-## 🌍 Достапност
-
-- Локално: преку Node.js сервер и Vite dev сервер  
-- Облак (планирано): MongoDB Atlas и deployment со Vercel или Render
-
-## 📌 Забелешки
-
-- Проектот користи **MERN стек** (MongoDB, Express, React, Node), наместо MEAN.  
-- Не се опфатени буквално сите функционалности од оригиналните упатства, туку фокусот е ставен на основна функционална динамичка апликација.  
-- Frontend и Backend се поврзани преку REST API и контекст.
-
-## 👤 Автор
-
-**Сандра Колевска**  
-Индекс: ИНКИ969  
-ФИНКИ – Веб програмирање 2024
+Open your browser and navigate to:  
+👉 `http://localhost:5173`
