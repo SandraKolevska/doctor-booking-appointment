@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "Features: <br> <br> \r Doctor Selection: Choose from a list of available doctors and specialties. <br>\r Appointment Scheduling: Easily book appointments with available time slots. <br>\r Patient Dashboard: View and manage your upcoming and past appointments. <br>\r Responsive Design: Works seamlessly across mobile, tablet, and desktop devices. <br> <br>",
+  "description": "Doctor appointment booking web app built with MERN stack (MongoDB, Express.js, React, Node.js).",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Filip1010/Doctor-Booking-Appointment-.git"
+    "url": "git+https://github.com/SandraKolevska/doctor-booking-appointment.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sandra Kolevska",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Filip1010/Doctor-Booking-Appointment-/issues"
+    "url": "https://github.com/SandraKolevska/doctor-booking-appointment/issues"
   },
-  "homepage": "https://github.com/Filip1010/Doctor-Booking-Appointment-#readme",
+  "homepage": "https://github.com/SandraKolevska/doctor-booking-appointment#readme",
   "dependencies": {
     "@testing-library/react": "^16.2.0",
     "axios": "^1.7.7",
