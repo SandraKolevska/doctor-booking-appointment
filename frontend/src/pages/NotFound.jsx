@@ -1,4 +1,4 @@
-// filepath: c:\Users\Филип Кузманоски\Desktop\Doctor-Booking-Appointment-\frontend\src\pages\NotFound.jsx
+
 import React from 'react'
 
 const NotFound = () => {

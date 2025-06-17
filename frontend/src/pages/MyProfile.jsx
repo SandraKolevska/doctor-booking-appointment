@@ -4,16 +4,16 @@ import { assets } from '../assets/assets'
 const MyProfile = () => {
 
   const [userData, setUserData] = useState({
-    name: "Filip Kuzmanoski",
+    name: "Sandra Kolevska",
     image: assets.profile_pic,
-    email: 'filipkuzmanoski386@gmail.com',
-    phone: '+38972223350',
+    email: 'kolevska.sandra@uklo.edu.mk',
+    phone: '+38977447774',
     addres: {
       line1: "Bulevar Partizanski Odredi 165 - Skopje",
       line2: "Kole Nedelkovski 124 - Resen"
     },
-    gender: 'Male',
-    dob: '2002-05-20'
+    gender: 'Female',
+    dob: '2003-04-05'
   })
 
   const [isEdit, setIsEdit] = useState(false)

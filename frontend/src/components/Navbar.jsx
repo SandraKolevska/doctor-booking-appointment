@@ -10,7 +10,7 @@ const Navbar = () => {
 
 return (
         <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400 bg-transparent'>
-                <img onClick={()=> navigate('/')} className='w-44 cursor-pointer' src={assets.FilipLogo} alt="" />
+                <img onClick={()=> navigate('/')} className='w-44 cursor-pointer' src={assets.XMedikaLogo1} alt="" />
                 <ul className='hidden md:flex items-start gap-5 font-medium'>
                         <NavLink to='/'>
                                 <li className='py-1' >HOME</li>
@@ -54,7 +54,7 @@ return (
                                         <img className='w-7' onClick={() =>setShowMenu(false)} src={assets.cross_icon} alt="" />
                                 </div>
                                 <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
-                                        <NavLink className='px-4 pt-2 rounded inline-block' onClick={() => setShowMenu(false)} to='/'><p>Home</p></NavLink>
+                                        <NavLink className='px-4 pt-2 rounded inline-block' onClick={() => setShowMenu(false)} to='/'><p>HOME</p></NavLink>
                                         <NavLink className='px-4 pt-2 rounded inline-block' onClick={() => setShowMenu(false)} to='/doctors'><p>ALL DOCTORS</p></NavLink>
                                         <NavLink className='px-4 pt-2 rounded inline-block' onClick={() => setShowMenu(false)} to='/about'><p>ABOUT</p></NavLink>
                                         <NavLink className='px-4 pt-2 rounded inline-block' onClick={() => setShowMenu(false)} to='/contact'><p>CONTACT</p></NavLink>

@@ -10,18 +10,40 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault()
     if (state === 'Login') {
-      // Add your login logic here
-      // For example, you can check if the email and password are correct
-      if (email === 'test@example.com' && password === 'password') {
-        setIsLoggedIn(true)
-      } else {
-        alert('Invalid email or password')
+      try {
+        const res = await fetch('http://localhost:5000/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        })
+        const data = await res.json()
+        if (!res.ok) {
+          alert(data.message)
+        } else {
+          setIsLoggedIn(true)
+          
+          console.log('User logged in:', data.user)
+        }
+      } catch (err) {
+        alert('Server error')
       }
     } else {
-      // Add your sign-up logic here
-      // For example, you can create a new user account
-      alert('Account created successfully')
-      setState('Login')
+      try {
+        const res = await fetch('http://localhost:5000/api/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password }),
+        })
+        const data = await res.json()
+        if (!res.ok) {
+          alert(data.message)
+        } else {
+          alert('Account created successfully')
+          setState('Login')
+        }
+      } catch (err) {
+        alert('Server error')
+      }
     }
   }
 
@@ -33,22 +55,58 @@ const Login = () => {
         {state === "Sign Up" && (
           <div className='w-full'>
             <p>Full Name</p>
-            <input className='border border-zinc-300 rounded w-full p-2 mt-1' type='text' onChange={(e) => setName(e.target.value)} value={name} />
+            <input
+              className='border border-zinc-300 rounded w-full p-2 mt-1'
+              type='text'
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              required
+            />
           </div>
         )}
         <div className='w-full'>
           <p>Email</p>
-          <input className='border border-zinc-300 rounded w-full p-2 mt-1' type='email' onChange={(e) => setEmail(e.target.value)} value={email} />
+          <input
+            className='border border-zinc-300 rounded w-full p-2 mt-1'
+            type='email'
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+          />
         </div>
         <div className='w-full'>
           <p>Password</p>
-          <input className='border border-zinc-300 rounded w-full p-2 mt-1' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
+          <input
+            className='border border-zinc-300 rounded w-full p-2 mt-1'
+            type='password'
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            required
+          />
         </div>
-        <button className='bg-primary text-white w-full py-2 rounded-md text-base'>{state === 'Sign Up' ? "Create Account" : "Login"}</button>
+        <button className='bg-primary text-white w-full py-2 rounded-md text-base'>
+          {state === 'Sign Up' ? "Create Account" : "Login"}
+        </button>
         {state === "Sign Up" ? (
-          <p>Already have an Account? <span onClick={() => setState('Login')} className='text-primary underline cursor-pointer'>Login here</span></p>
+          <p>
+            Already have an Account?{' '}
+            <span
+              onClick={() => setState('Login')}
+              className='text-primary underline cursor-pointer'
+            >
+              Login here
+            </span>
+          </p>
         ) : (
-          <p>Create a new account? <span onClick={() => setState('Sign Up')} className='text-primary underline cursor-pointer'>click here</span></p>
+          <p>
+            Create a new account?{' '}
+            <span
+              onClick={() => setState('Sign Up')}
+              className='text-primary underline cursor-pointer'
+            >
+              click here
+            </span>
+          </p>
         )}
       </div>
       {isLoggedIn && <p className='text-green-500'>You are logged in!</p>}
@@ -57,3 +115,4 @@ const Login = () => {
 }
 
 export default Login
+

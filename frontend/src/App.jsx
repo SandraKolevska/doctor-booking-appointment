@@ -10,7 +10,9 @@ import Login from './pages/Login'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
-import NotFound from './pages/NotFound' 
+import NotFound from './pages/NotFound'
+import Careers from './pages/Careers'         
+import Apply from './pages/Apply'             
 
 const App = () => {
   return (
@@ -26,7 +28,9 @@ const App = () => {
         <Route path='/my-profile' element={<MyProfile />} />
         <Route path='/my-appointments' element={<MyAppointmets />} />
         <Route path='/appointments/:docId' element={<Appointment />} />
-        <Route path='*' element={<NotFound />} /> {/* Fallback route */}
+        <Route path='/careers' element={<Careers />} />       
+        <Route path='/apply' element={<Apply />} />           
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
