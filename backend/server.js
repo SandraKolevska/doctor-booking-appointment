@@ -18,13 +18,13 @@ app.use(express.json());
 const doctorRoutes = require('./routes/doctorRoutes');
 const appointmentRoutes = require('./routes/appointmentRoutes');
 const authRoutes = require('./routes/authRoutes');
-const jobApplicationRoutes = require('./routes/jobApplicationRoutes'); // 👈 додадено ова
+const jobApplicationRoutes = require('./routes/jobApplicationRoutes'); 
 
 // Користење на рутите
 app.use('/api/doctors', doctorRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/applications', jobApplicationRoutes); // 👈 додадено ова
+app.use('/api/applications', jobApplicationRoutes); 
 
 // Поврзување со MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -36,4 +36,5 @@ mongoose.connect(process.env.MONGO_URI, {
   app.listen(5000, () => console.log('Server running on port 5000'));
 })
 .catch(err => console.error(err));
+
 

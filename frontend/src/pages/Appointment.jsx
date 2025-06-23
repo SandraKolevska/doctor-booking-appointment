@@ -6,7 +6,6 @@ import RelatedDoctors from '../components/RelatedDoctors'
 import axios from 'axios'
 
 const Appointment = () => {
-
   const { docId } = useParams()
   const { doctors, currencySymbol } = useContext(AppContext)
   const daysOfWeek = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT']
@@ -16,6 +15,7 @@ const Appointment = () => {
   const [slotTime, setSlotTime] = useState('')
   const [userName, setUserName] = useState('')
   const [userEmail, setUserEmail] = useState('')
+  const [bookedTimes, setBookedTimes] = useState([])
 
   const fetchDocInfo = async () => {
     const docInfo = doctors.find(doc => doc._id === docId)
@@ -30,8 +30,7 @@ const Appointment = () => {
       let currentDate = new Date(today)
       currentDate.setDate(today.getDate() + i)
 
-      let endTime = new Date()
-      endTime.setDate(today.getDate() + i)
+      let endTime = new Date(currentDate)
       endTime.setHours(21, 0, 0, 0)
 
       if (today.getDate() === currentDate.getDate()) {
@@ -46,16 +45,29 @@ const Appointment = () => {
 
       while (currentDate < endTime) {
         let formattedTime = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-
         timeSlots.push({
           datetime: new Date(currentDate),
           time: formattedTime
         })
-
         currentDate.setMinutes(currentDate.getMinutes() + 30)
       }
 
       setDocSlots(prev => ([...prev, timeSlots]))
+    }
+  }
+
+  const fetchBookedTimes = async () => {
+    if (!docSlots[slotIndex]?.[0]) return;
+    const date = docSlots[slotIndex][0].datetime.toDateString();
+
+    try {
+      const res = await axios.get('http://localhost:5000/api/appointments', {
+        params: { doctorId: docId, date }
+      });
+      const takenTimes = res.data.map(a => a.time);
+      setBookedTimes(takenTimes);
+    } catch (err) {
+      console.error("Failed to load booked times", err);
     }
   }
 
@@ -66,6 +78,10 @@ const Appointment = () => {
   useEffect(() => {
     fetchDocInfo()
   }, [doctors, docId])
+
+  useEffect(() => {
+    fetchBookedTimes()
+  }, [slotIndex, docSlots])
 
   const handleBookAppointment = async () => {
     if (!slotTime || !userName || !userEmail) {
@@ -86,6 +102,7 @@ const Appointment = () => {
       setSlotTime('')
       setUserName('')
       setUserEmail('')
+      fetchBookedTimes()
     } catch (err) {
       console.error(err)
       alert('Failed to book appointment.')
@@ -134,11 +151,26 @@ const Appointment = () => {
         </div>
 
         <div className='flex items-center gap-4 w-full overflow-x-scroll mt-4'>
-          {docSlots.length && docSlots[slotIndex].map((item, index) => (
-            <p onClick={() => setSlotTime(item.time)} className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${item.time === slotTime ? 'bg-primary text-white' : 'text-gray-400 border border-gray-300'}`} key={index}>
-              {item.time.toLowerCase()}
-            </p>
-          ))}
+          {docSlots.length && docSlots[slotIndex].map((item, index) => {
+            const isTaken = bookedTimes.includes(item.time)
+            return (
+              <p
+                onClick={() => {
+                  if (!isTaken) setSlotTime(item.time)
+                }}
+                className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${
+                  item.time === slotTime
+                    ? 'bg-primary text-white'
+                    : isTaken
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'text-gray-400 border border-gray-300 hover:bg-primary hover:text-white'
+                }`}
+                key={index}
+              >
+                {item.time.toLowerCase()}
+              </p>
+            )
+          })}
         </div>
 
         {/* Input for user info */}
@@ -174,3 +206,6 @@ const Appointment = () => {
 }
 
 export default Appointment
+
+
+

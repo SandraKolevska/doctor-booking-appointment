@@ -61,14 +61,8 @@ Doctor-Booking-Appointment/
 
 ## 🚀 How to Run the Project
 
-### 1. Clone the repository
 
-```bash
-git clone https://github.com/SandraKolevska/doctor-booking-app.git
-cd doctor-booking-app
-```
-
-### 2. Run Backend
+### 1. Run Backend ###
 
 ```bash
 cd backend
@@ -78,7 +72,7 @@ npm run dev
 
 Make sure **MongoDB is running locally** on your machine (default port: `27017`).
 
-### 3. Run Frontend
+### 2. Run Frontend
 
 ```bash
 cd frontend

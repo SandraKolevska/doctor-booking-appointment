@@ -8,17 +8,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SandraKolevska/doctor-booking-appointment.git"
-  },
   "keywords": [],
   "author": "Sandra Kolevska",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SandraKolevska/doctor-booking-appointment/issues"
-  },
-  "homepage": "https://github.com/SandraKolevska/doctor-booking-appointment#readme",
   "dependencies": {
     "@testing-library/react": "^16.2.0",
     "axios": "^1.7.7",
@@ -45,3 +37,4 @@
     "vitest": "^3.0.9"
   }
 }
+

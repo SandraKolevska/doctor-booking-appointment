@@ -13,8 +13,15 @@ const bookAppointment = async (req, res) => {
 
 // GET /api/appointments
 const getAppointments = async (req, res) => {
+  const { doctorId, date } = req.query;
+
   try {
-    const appointments = await Appointment.find(); 
+    if (doctorId && date) {
+      const appointments = await Appointment.find({ doctorId, date });
+      return res.status(200).json(appointments);
+    }
+
+    const appointments = await Appointment.find();
     res.status(200).json(appointments);
   } catch (err) {
     res.status(500).json({ message: 'Failed to fetch appointments' });
@@ -37,3 +44,6 @@ module.exports = {
   getAppointments,
   cancelAppointment,
 };
+
+
+

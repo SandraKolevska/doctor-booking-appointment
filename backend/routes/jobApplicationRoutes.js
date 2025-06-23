@@ -21,7 +21,7 @@ router.post('/', upload.single('cv'), async (req, res) => {
   const { fullName, email, position, message } = req.body;
   const cvFile = req.file;
 
-  console.log('✅ Новa апликација:');
+  console.log(' Новa апликација:');
   console.log({ fullName, email, position, message });
   console.log('📎 CV:', cvFile?.originalname);
 
